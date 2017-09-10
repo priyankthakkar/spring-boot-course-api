@@ -36,4 +36,20 @@ public class TopicService {
             this.topics.add(topic);
         }
     }
+
+    public void updateTopic(String id, Topic updatedTopic) {
+        for (Topic topic : this.topics) {
+            if (topic.getId().equalsIgnoreCase(id)) {
+                topic.setId(updatedTopic.getId());
+                topic.setDescription(updatedTopic.getDescription());
+                topic.setName(updatedTopic.getName());
+                return;
+            }
+        }
+    }
+
+    public void deleteTopic(String id) {
+        this.topics
+                .removeIf(topic -> topic.getId().equalsIgnoreCase(id));
+    }
 }
