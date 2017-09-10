@@ -1,14 +1,12 @@
 package io.java.springbootquickstart.controller;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.ArrayList;
-
+import io.java.springbootquickstart.model.Topic;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import io.java.springbootquickstart.model.Topic;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by priyankthakkar on 9/9/17.
