@@ -13,12 +13,20 @@ import java.util.List;
 public class TopicService {
 
     private List<Topic> topics = Arrays.asList(
-            new Topic(1, "Topic One", "Topic One Description"),
-            new Topic(2, "Topic Two", "Topic Two Description"),
-            new Topic(3, "Topic Three", "Topic Three Description")
+            new Topic("Spring", "Spring Course", "Spring Course Description"),
+            new Topic("Java", "Core Java Course", "Core Java Course Description"),
+            new Topic("JavaScript", "JavaScript Course", "JavaScript Course Description")
     );
 
     public List<Topic> getAllTopics() {
         return this.topics;
+    }
+
+    public Topic getTopic(String id) {
+        return this.topics
+                .stream()
+                .filter(topic -> topic.getId().equalsIgnoreCase(id))
+                .findFirst()
+                .get();
     }
 }

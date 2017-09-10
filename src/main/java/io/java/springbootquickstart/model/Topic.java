@@ -5,7 +5,7 @@ package io.java.springbootquickstart.model;
  */
 public class Topic {
 
-    private int id;
+    private String id;
     private String name;
     private String description;
 
@@ -13,17 +13,17 @@ public class Topic {
 
     }
 
-    public Topic(int id, String name, String description) {
+    public Topic(String id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public int getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
