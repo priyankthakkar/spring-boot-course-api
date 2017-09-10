@@ -1,11 +1,12 @@
 package io.java.springbootquickstart.controller;
 
 import io.java.springbootquickstart.model.Topic;
+import io.java.springbootquickstart.service.TopicService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,15 +15,11 @@ import java.util.List;
 @RestController
 public class TopicController {
 
+    @Autowired
+    private TopicService topicService;
+
     @RequestMapping(value = "/rest/api/v1/courses/topics", method = RequestMethod.GET)
-    public List<Topic> getTopics() {
-
-        Topic[] topics = {
-                new Topic(1, "Topic One", "Topic One Description"),
-                new Topic(2, "Topic Two", "Topic Two Description"),
-                new Topic(3, "Topic Three", "Topic Three Description")
-        };
-
-        return Arrays.asList(topics);
+    public List<Topic> getAllTopics() {
+        return this.topicService.getAllTopics();
     }
 }
